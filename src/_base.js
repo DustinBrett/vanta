@@ -330,7 +330,7 @@ VANTA.VantaBase = class VantaBase {
     }
 
     // Only animate if element is within view
-    if (this.isOnScreen() || this.options.forceAnimate) {
+    if (this.options.forceAnimate || this.isOnScreen()) {
       if (typeof this.onUpdate === "function") {
         this.onUpdate()
       }
