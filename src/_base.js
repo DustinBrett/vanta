@@ -180,7 +180,8 @@ VANTA.VantaBase = class VantaBase {
     // Set renderer
     this.renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true
+      antialias: true,
+      canvas: this.options.canvas
     })
     this.el.appendChild(this.renderer.domElement)
     this.applyCanvasStyles(this.renderer.domElement)
