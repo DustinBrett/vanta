@@ -4,7 +4,7 @@ Number.prototype.clamp = function(min, max) { return Math.min(Math.max(this, min
 
 export function mobileCheck(){
   if (typeof navigator !== 'undefined') {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 600
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || globalThis.innerWidth < 600
   }
   return null
 }

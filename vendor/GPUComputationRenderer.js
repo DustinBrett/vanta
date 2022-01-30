@@ -1,5 +1,5 @@
-const win = typeof window == 'object'
-let THREE = win && window.THREE
+const win = typeof globalThis == 'object'
+let THREE = win && globalThis.THREE
 let {
 	Camera,
 	ClampToEdgeWrapping,

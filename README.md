@@ -87,7 +87,7 @@ effect.destroy() // e.g. call this in React's componentWillUnmount
 ```js
 import React from 'react'
 import BIRDS from 'vanta/dist/vanta.birds.min'
-// Make sure window.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
+// Make sure globalThis.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
 
 class MyComponent extends React.Component {
   constructor() {
@@ -116,7 +116,7 @@ class MyComponent extends React.Component {
 ```js
 import React, { useState, useEffect, useRef } from 'react'
 import BIRDS from 'vanta/dist/vanta.birds.min'
-// Make sure window.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
+// Make sure globalThis.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
 
 const MyComponent = (props) => {
   const [vantaEffect, setVantaEffect] = useState(0)
@@ -148,7 +148,7 @@ const MyComponent = (props) => {
 
 <script>
 import BIRDS from 'vanta/src/vanta.birds'
-// Make sure window.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
+// Make sure globalThis.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
 
 export default {
   mounted() {

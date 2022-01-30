@@ -1,8 +1,8 @@
 import VantaBase from './_base.js'
 export {VANTA} from './_base.js'
 
-const win = typeof window == 'object'
-let THREE = win && window.THREE
+const win = typeof globalThis == 'object'
+let THREE = win && globalThis.THREE
 
 export default class ShaderBase extends VantaBase {
   constructor(userOptions) {
@@ -26,7 +26,7 @@ export default class ShaderBase extends VantaBase {
       },
       iDpr: {
         type: "f",
-        value: window.devicePixelRatio || 1
+        value: this.options.devicePixelRatio || globalThis.devicePixelRatio || 1
       },
       iMouse: {
         type: "v2",

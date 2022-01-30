@@ -1,7 +1,7 @@
 import VantaBase, { VANTA } from './_base.js'
 import {rn,ri,sample} from './helpers.js'
 
-let THREE = (typeof window == 'object' && window.THREE)
+let THREE = (typeof globalThis == 'object' && globalThis.THREE)
 
 const defaultOptions = {
   color: 0x005588,
