@@ -3,6 +3,8 @@ import {rn,ri,sample} from './helpers.js'
 
 let THREE = (typeof globalThis == 'object' && globalThis.THREE)
 
+let hueHexMap = [];
+
 const defaultOptions = {
   color: 0x005588,
   shininess: 30,
@@ -169,13 +171,13 @@ class Waves extends VantaBase {
 
       this.updateTick = updateColor || typeof this.updateTick === "undefined" ? 0 : this.updateTick + 1;
 
-      this.plane.material.color.set(
-        this.HSLToHexNum(
-          updateColor ? (this.countDown ? --this.options.hue : ++this.options.hue) : this.options.hue,
-          this.options.saturation,
-          this.options.lightness
-        )
-      );
+      const hue = updateColor ? (this.countDown ? --this.options.hue : ++this.options.hue) : this.options.hue;
+
+      if (typeof hueHexMap[hue] === "undefined") {
+        hueHexMap[hue] = this.HSLToHexNum(hue, this.options.saturation, this.options.lightness);
+      }
+
+      this.plane.material.color.set(hueHexMap[hue]);
     }
     this.plane.material.shininess = this.options.shininess;
     this.camera.ox = this.cameraPosition.x / this.options.zoom;
