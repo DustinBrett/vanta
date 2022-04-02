@@ -187,9 +187,12 @@ VANTA.VantaBase = class VantaBase {
     }
     // Set renderer
     this.renderer = new THREE.WebGLRenderer({
-      alpha: true,
+      alpha: false,
       antialias: true,
-      canvas: this.options.canvas
+      canvas: this.options.canvas,
+      depth: false,
+      stencil: false,
+      powerPreference: "high-performance"
     })
     if (!this.options.canvas) {
       this.el.appendChild(this.renderer.domElement)
