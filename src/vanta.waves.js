@@ -167,11 +167,6 @@ class Waves extends VantaBase {
     this.plane.geometry.attributes.position.setUsage(THREE.DynamicDrawUsage);
     this.plane.geometry.computeVertexNormals();
     this.plane.geometry.attributes.position.needsUpdate = true;
-
-    if (this.wireframe) {
-      this.wireframe.geometry.fromGeometry(this.plane.geometry);
-      this.wireframe.geometry.computeFaceNormals();
-    }
   }
 
   onMouseMove(x,y) {
