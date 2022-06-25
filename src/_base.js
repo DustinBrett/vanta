@@ -168,18 +168,6 @@ VANTA.VantaBase = class VantaBase {
     }
   }
 
-  applyCanvasStyles(canvasEl, opts={}){
-    Object.assign(canvasEl.style, {
-      position: 'absolute',
-      zIndex: 0,
-      top: 0,
-      left: 0,
-      background: ''
-    })
-    Object.assign(canvasEl.style, opts)
-    canvasEl.classList.add('vanta-canvas')
-  }
-
   initThree() {
     if (!THREE.WebGLRenderer) {
       console.warn("[VANTA] No THREE defined on window")
@@ -195,8 +183,7 @@ VANTA.VantaBase = class VantaBase {
       powerPreference: "high-performance"
     })
     if (!this.options.canvas) {
-      this.el.appendChild(this.renderer.domElement)
-      this.applyCanvasStyles(this.renderer.domElement)
+      this.el.appendChild(this.renderer.domElement);
     } else {
       this.options.canvas.style = {
         height: this.options.canvas.height,
